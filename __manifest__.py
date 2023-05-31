@@ -29,6 +29,8 @@
         'views/templates.xml',
         'data/data.xml',
         'demo/demo.xml',
+        'report/academy_report.xml',
+        'report/course_detail.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

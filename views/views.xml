@@ -71,12 +71,48 @@
       </field>
   </record>
 
+                    <!--Lesson  -->
+
+  <record id="action_academy_lesson" model="ir.actions.act_window">
+    <field name="name">Lesson</field>
+    <field name="res_model">academy.lesson</field>
+  </record>
+
+
+<!--  <record id="academy_lesson_list" model="ir.ui.view">-->
+<!--    <field name="name">Academy Lessons: List</field>-->
+<!--    <field name="model">academy.lesson</field>-->
+<!--    <field name="arch" type="xml">-->
+<!--      <tree string="Courses">-->
+<!--        <field name="name"/>-->
+<!--&lt;!&ndash;        <field name="teacher_id"/>&ndash;&gt;-->
+<!--      </tree>-->
+<!--    </field>-->
+<!--  </record>-->
+
+  <record id="academy_lesson_form" model="ir.ui.view">
+    <field name="name">Academy Lesson: Form</field>
+    <field name="model">academy.lesson</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="duration">
+            </field>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
                     <!--    -->
   <menuitem sequence="0" id="menu_academy" name="Academy"/>
   <menuitem id="menu_academy_content" parent="menu_academy" name="Academy Content"/>
 
 <!--  <menuitem id="menu_academy_content_courses" parent="menu_academy_content"-->
 <!--            action="action_academy_course"/>-->
-  <menuitem id="menu_academy_content_teachers" parent="menu_academy_content"
-            action="action_academy_teacher"/>
+  <menuitem id="menu_academy_content_teachers" parent="menu_academy_content" action="action_academy_teacher"/>
+  <menuitem id="menu_academy_content_lessons" parent="menu_academy_content" action="action_academy_lesson"/>
 </odoo>

@@ -24,6 +24,7 @@ class Course(models.Model):
     lesson = fields.One2many('academy.lesson', 'course_duration', string="Lessons")
 
 
+
 class AcademyLesson(models.Model):
     _name = 'academy.lesson'
     _description = 'academy lesson'
