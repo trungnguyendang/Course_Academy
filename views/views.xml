@@ -13,6 +13,7 @@
         <sheet>
           <group>
             <field name="name"/>
+            <field name="ImageFile" widget="image" class="oe_avatar"/>
             <field name="biography"/>
             <field name="course_ids">
                 <tree string="Courses" editable="bottom">
@@ -79,16 +80,17 @@
   </record>
 
 
-<!--  <record id="academy_lesson_list" model="ir.ui.view">-->
-<!--    <field name="name">Academy Lessons: List</field>-->
-<!--    <field name="model">academy.lesson</field>-->
-<!--    <field name="arch" type="xml">-->
-<!--      <tree string="Courses">-->
-<!--        <field name="name"/>-->
-<!--&lt;!&ndash;        <field name="teacher_id"/>&ndash;&gt;-->
-<!--      </tree>-->
-<!--    </field>-->
-<!--  </record>-->
+  <record id="academy_lesson_list" model="ir.ui.view">
+    <field name="name">Academy Lessons: List</field>
+    <field name="model">academy.lesson</field>
+    <field name="arch" type="xml">
+      <tree string="Courses">
+          <field name="name"/>
+          <field name="course_id"/>
+<!--        <field name="teacher_id"/>-->
+      </tree>
+    </field>
+  </record>
 
   <record id="academy_lesson_form" model="ir.ui.view">
     <field name="name">Academy Lesson: Form</field>
@@ -99,8 +101,9 @@
           <group>
             <field name="name"/>
             <field name="description"/>
-            <field name="duration">
-            </field>
+            <field name="duration"/>
+            <field name="upload_lessons" widget="many2many_binary"/>
+            <field name="reference_link" widget="url"/>
           </group>
         </sheet>
       </form>

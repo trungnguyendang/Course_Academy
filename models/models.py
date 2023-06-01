@@ -9,6 +9,7 @@ class Teacher(models.Model):
 
     name = fields.Char()
     biography = fields.Html()
+    ImageFile = fields.Binary(string="Upload file")
 
     course_ids = fields.One2many('product.template', 'teacher_id', string="Courses")
 
@@ -32,9 +33,10 @@ class AcademyLesson(models.Model):
     name = fields.Char(string="Lesson")
     description = fields.Text(string="Description")
     duration = fields.Float(string="Lesson duration")
+    upload_lessons = fields.Many2many(comodel_name="ir.attachment", string="Upload files")
+    reference_link = fields.Char(string="Reference")
 
     course_duration = fields.Many2one('product.template', string="Duration")
     course_id = fields.Many2one('academy.course', string="Course")
-
 
 
